@@ -1,8 +1,8 @@
 import express from 'express';
+import sessions from 'express-session';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import SequelizeStore from 'connect-session-sequelize';
-import sessions from 'express-session';
 import db from './src/database/Configuration.db';
 import { PORT } from './src/config/Configuration.app';
 import Authentication from './src/routes/Authentication';
@@ -11,7 +11,7 @@ import Users from './src/routes/Users';
 dotenv.config();
 
 const app = express(); 
- 
+
 const sessionStore = SequelizeStore(sessions.Store);
 
 const store = new sessionStore({ 

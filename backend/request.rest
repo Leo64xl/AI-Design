@@ -1,0 +1,44 @@
+### Crear un nuevo usuario
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "email": "john@gmail.com",
+  "password": "password123",
+  "confPassword": "password123",
+  "role": "admin"
+}
+
+### Login de usuario
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "john@gmail.com",
+  "password": "password123"
+}
+
+### Logout de usuario
+DELETE http://localhost:5000/logout
+
+### Mis datos de usuario
+GET http://localhost:5000/me
+
+### Obtener todos los usuarios
+GET http://localhost:5000/users
+
+### Actualizar un usuario
+PUT http://localhost:5000/users/cfe31206-d234-4118-b73a-b541ef367fc4
+Content-Type: application/json
+
+{
+  "username": "updateduser",
+  "email": "john@gmail.com",
+  "password": "",
+  "confPassword": "",
+  "role": "admin"
+}
+
+### Eliminar un usuario
+DELETE http://localhost:5000/users/cfe31206-d234-4118-b73a-b541ef367fc4

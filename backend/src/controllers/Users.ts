@@ -3,6 +3,8 @@ import { Request, Response } from 'express';
 import argon2 from 'argon2';
 import crypto from 'crypto';
 
+//Estas son peticiones basicas relacionadas con los usuarios, funciones CRUD (Create, Read, Update, Delete)
+
 export const getUsers = async (req: Request, res: Response) => {
     try { 
         const response = await Users.findAll({
@@ -37,10 +39,10 @@ export const createUser = async (req: Request, res: Response) => {
 
     if(password === "" || password === null) return res.status(400).json({ msg: "La contraseña no puede estar vacía" });
 
-    if(password.length < 8) return res.status(400).json({ msg: "La contraseña debe tener al menos 8 caracteres" });
-    
     if(password !== confPassword) return res.status(400).json({ msg: "Las contraseñas no coinciden"});
 
+    if(password.length < 8) return res.status(400).json({ msg: "La contraseña debe tener al menos 8 caracteres" });
+        
     if(username.length < 3 || username.length > 100) return res.status(400).json({ msg: "El nombre de usuario debe tener entre 3 y 100 caracteres" });
 
     if(!/^[a-zA-Z0-9_]+$/.test(username)) return res.status(400).json({ msg: "El nombre de usuario solo puede contener letras, números y guiones bajos" });
