@@ -1,0 +1,395 @@
+.error-verification-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-verification-container {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-icon {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.error-message {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.error-btn {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  min-width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-btn.primary {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.error-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.error-btn.primary:active {
+  transform: translateY(0);
+}
+
+.error-btn.secondary {
+  background: transparent;
+  color: #555;
+  border: 2px solid #bdc3c7;
+  box-shadow: 0 2px 8px rgba(189, 195, 199, 0.2);
+}
+
+.error-btn.secondary:hover {
+  background: #bdc3c7;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(189, 195, 199, 0.3);
+}
+
+.additional-options {
+  margin: 2rem 0 1.5rem 0;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.additional-options::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border-radius: 12px 12px 0 0;
+}
+
+.options-text {
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.secondary-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.secondary-link {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.secondary-link:hover {
+  color: #495057;
+  border-color: #adb5bd;
+  background: #f8f9fa;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.help-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.help-text {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-email {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.contact-email:hover {
+  color: #2980b9;
+  background: rgba(52, 152, 219, 0.2);
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+.error-verification-container {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-verification-container:hover {
+  box-shadow: 0 12px 40px rgba(44, 62, 80, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .error-verification-container {
+    padding: 2.5rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .error-icon {
+    font-size: 3.5rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-verification-bg {
+    padding: 0.5rem;
+  }
+  
+  .error-verification-container {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .error-icon {
+    font-size: 3rem;
+  }
+  
+  .error-title {
+    font-size: 1.8rem;
+  }
+  
+  .error-message {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+  
+  .error-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    min-width: auto;
+  }
+  
+  .secondary-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+  
+  .secondary-link {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  
+  .additional-options {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .help-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .help-text {
+    font-size: 0.9rem;
+  }
+  
+  .contact-email {
+    font-size: 0.9rem;
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .error-verification-container {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .error-title {
+    font-size: 1.6rem;
+  }
+  
+  .error-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Caso exitoso (Ya verificado) */
+.error-verification-bg[style*="76, 175, 80"] .error-title {
+  color: #27ae60;
+}
+
+.error-verification-bg[style*="76, 175, 80"] .error-btn.primary {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+/* Caso expirado (Naranja) */
+.error-verification-bg[style*="255, 152, 0"] .error-title {
+  color: #f39c12;
+}
+
+.error-verification-bg[style*="255, 152, 0"] .error-btn.primary {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.error-btn.primary:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+.error-btn:focus,
+.secondary-link:focus,
+.contact-email:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-icon {
+    animation: none;
+  }
+  
+  .error-verification-container {
+    animation: none;
+  }
+  
+  .error-btn,
+  .secondary-link,
+  .contact-email {
+    transition: none;
+  }
+}

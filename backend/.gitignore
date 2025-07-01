@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/services/verify-email/Emailer.ts
 
 # testing
 /coverage

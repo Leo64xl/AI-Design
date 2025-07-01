@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import axios from 'axios';
 import reportWebVitals from './reportWebVitals';
-import { store } from './store';
+import { store } from './app/store';
 
 axios.defaults.withCredentials = true; 
 

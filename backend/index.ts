@@ -5,7 +5,9 @@ import dotenv from 'dotenv';
 import SequelizeStore from 'connect-session-sequelize';
 import db from './src/database/Configuration.db';
 import { PORT } from './src/config/Configuration.app';
+import './src/database/models/Index.models';
 import Authentication from './src/routes/Authentication';
+import EmailVerification from './src/routes/EmailVerification';
 import Users from './src/routes/Users';
 
 dotenv.config();
@@ -22,13 +24,16 @@ const store = new sessionStore({
 //   await db.sync();
 //}) (); 
 
+app.set('trust proxy', true);
+
 app.use(sessions( {
     secret: process.env.SESSION_SECRET || (() => { throw new Error('SESSION_SECRET is not defined'); })(),
     resave: false,
     saveUninitialized: false,
     store: store,
     cookie: {
-        secure: 'auto'
+        secure: 'auto',
+        maxAge: 1000 * 60 * 60 * 24, 
     }
 }));
 
@@ -41,6 +46,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(Authentication);
+app.use(EmailVerification);
 app.use(Users);
 
 //store.sync();

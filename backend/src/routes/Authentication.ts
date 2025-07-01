@@ -1,13 +1,12 @@
 import express from 'express';
 import { Login, 
         Logout, 
-        Me 
-} from '../controllers/Authentication';
-import { loginLimiter } from '../middlewares/LoginLimiter'
+        Me
+} from '../controllers/auth/Authentication';
+import { loginLimiter } from '../middlewares/limiters/LoginLimiter';
 
 const router = express.Router();
 
-// Rutas de autenticación
 router.get('/me', (req, res, next) => {
     Me(req, res).catch(next);
 });
