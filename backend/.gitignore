@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/services/verify-email/Emailer.ts
+
+# files
+/src/services/email/verify-email/Emailer.ts
+/src/services/email/reset-password-request/NewPassword.ts
+/src/services/email/reset-password-success/ResetPassword.ts
 
 # testing
 /coverage

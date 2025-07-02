@@ -101,7 +101,7 @@ export async function sendVerificationEmail(
             </a>
         </div>
 
-        <!-- ✅ DETALLES DEL REGISTRO -->
+        <!--  DETALLES DEL REGISTRO -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #495057; margin: 0 0 15px 0; font-size: 15px; font-weight: 600; text-align: center;">
                 📋 Detalles del registro

@@ -8,6 +8,7 @@ import { PORT } from './src/config/Configuration.app';
 import './src/database/models/Index.models';
 import Authentication from './src/routes/Authentication';
 import EmailVerification from './src/routes/EmailVerification';
+import ResetPassword from './src/routes/ResetPassword';
 import Users from './src/routes/Users';
 
 dotenv.config();
@@ -47,6 +48,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(Authentication);
 app.use(EmailVerification);
+app.use(ResetPassword);
 app.use(Users);
 
 //store.sync();

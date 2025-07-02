@@ -1,7 +1,7 @@
 import Users from '../../database/models/User.model';
 import { Request, Response } from 'express';
-import { sendVerificationEmail } from '../../services/verify-email/Emailer'; 
-import { TokenService } from '../../services/token-service/TokenService';
+import { sendVerificationEmail } from '../../services/email/verify-email/Emailer'; 
+import { TokenService } from '../../services/tokens/TokenEmailVerification';
 import db from '../../database/Configuration.db';
 import jwt from 'jsonwebtoken';
 

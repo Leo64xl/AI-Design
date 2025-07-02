@@ -1,7 +1,7 @@
 import Users from '../../database/models/User.model';
 import { Request, Response } from 'express';
-import { sendVerificationEmail } from '../../services/verify-email/Emailer'; 
-import { TokenService } from '../../services/token-service/TokenService'; 
+import { sendVerificationEmail } from '../../services/email/verify-email/Emailer'; 
+import { TokenService } from '../../services/tokens/TokenEmailVerification'; 
 import { Op } from 'sequelize';
 import argon2 from 'argon2';
 import crypto from 'crypto';
@@ -47,6 +47,10 @@ export const createUser = async (req: Request, res: Response) => {
 
     if(password !== confPassword) {
         return res.status(400).json({ msg: "Las contraseñas no coinciden" });
+    }
+
+    if(!/^[a-zA-Z0-9]+$/.test(password)) {
+        return res.status(400).json({ msg: "La contraseña solo puede contener letras y números"});
     }
 
     if(password.length < 3 || password.length > 16) {
@@ -135,6 +139,9 @@ export const updateUser = async (req: Request, res: Response) => {
     let hashedPassword;
    
     if (password) {
+        if (!/^[a-zA-Z0-9]+$/.test(password)) {
+            return res.status(400).json({ msg: "La contraseña solo puede contener letras y números" });
+        }
         if (password.length < 3 || password.length > 16) { 
             return res.status(400).json({ msg: "La contraseña debe tener entre 3 y 16 caracteres" });
         }

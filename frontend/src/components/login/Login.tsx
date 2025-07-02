@@ -195,6 +195,12 @@ const Login = () => {
               />
             </div>
           </div>
+
+          <div className="forgot-password-link">
+            <Link to="/forgot-password" className="forgot-link">
+              ¿Olvidaste tu contraseña?
+            </Link>
+          </div>
           
           {displayError && <p className="error-message">{displayError}</p>}
           
